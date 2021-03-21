@@ -13,3 +13,7 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Go Air builds temp data here, just ignore it
+bin/*
+tmp/*
