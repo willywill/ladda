@@ -11,6 +11,13 @@ import (
 )
 
 func main() {
+	// Get the secret from the environment variables
+	_, ok := os.LookupEnv("SECRET")
+
+	if !ok {
+		panic("No secret auth token was found in the environment.")
+	}
+
 	port := "3001"
 	envPort, ok := os.LookupEnv("PORT")
 
@@ -24,7 +31,7 @@ func main() {
 
 	uploadHandler := http.HandlerFunc(handler.UploadFile)
 
-	multiplexer.Handle("/", middleware.Authenticate(uploadHandler))
+	multiplexer.Handle("/api/v1/upload", middleware.Validate(middleware.Authenticate(uploadHandler)))
 
 	fmt.Printf("> Server started on port %v\n", port)
 	err := http.ListenAndServe(fmt.Sprintf(":%v", port), multiplexer)
