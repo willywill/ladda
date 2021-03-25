@@ -31,7 +31,7 @@ func main() {
 
 	uploadHandler := http.HandlerFunc(handler.UploadFile)
 
-	multiplexer.Handle("/api/v1/upload", middleware.Validate(middleware.Authenticate(uploadHandler)))
+	multiplexer.Handle("/api/v1/upload", middleware.Validate(middleware.Authorize(uploadHandler)))
 
 	fmt.Printf("> Server started on port %v\n", port)
 	err := http.ListenAndServe(fmt.Sprintf(":%v", port), multiplexer)

@@ -8,7 +8,7 @@ import (
 	"github.com/willywill/ladda/pkg/responder"
 )
 
-func Authenticate(next http.Handler) http.Handler {
+func Authorize(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
 		// Get the secret from the environment variables
 		secret, _ := os.LookupEnv("SECRET")
