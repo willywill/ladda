@@ -21,7 +21,6 @@ func TestValidate(t *testing.T) {
 
 		req.Header.Set("Content-Type", "multipart/form-data")
 
-		// call the handler using a mock response recorder (we'll not use that anyway)
 		handlerToTest.ServeHTTP(res, req)
 
 		if mockWasCalled {
