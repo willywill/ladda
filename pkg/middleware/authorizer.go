@@ -11,7 +11,7 @@ import (
 
 func isEqualString(a string, b string) bool {
 	sanitizedA := strings.TrimRight(a, "\n")
-	sanitizedB := strings.TrimRight(a, "\n")
+	sanitizedB := strings.TrimRight(b, "\n")
 
 	return sanitizedA == sanitizedB
 }
