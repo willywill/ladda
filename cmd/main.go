@@ -12,10 +12,15 @@ import (
 
 func main() {
 	// Get the secret from the environment variables
-	_, ok := os.LookupEnv("SECRET")
+	_, secretOk := os.LookupEnv("SECRET")
+	_, pathOk := os.LookupEnv("WRITE_PATH")
 
-	if !ok {
+	if !secretOk {
 		panic("No secret auth token was found in the environment.")
+	}
+
+	if !pathOk {
+		panic("No write file path was found in the environment.")
 	}
 
 	port := "3001"

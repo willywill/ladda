@@ -4,9 +4,17 @@ import (
 	"encoding/base64"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/willywill/ladda/pkg/responder"
 )
+
+func isEqualString(a string, b string) bool {
+	sanitizedA := strings.TrimRight(a, "\n")
+	sanitizedB := strings.TrimRight(b, "\n")
+
+	return sanitizedA == sanitizedB
+}
 
 func Authorize(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
@@ -22,7 +30,7 @@ func Authorize(next http.Handler) http.Handler {
 		// Assume if the token is malformed, that the response is unauthorized anyway.
 		// Check the secret against the token in the request, if we don't have a match we
 		// send back an error in the response with a 401 status code
-		if secret != string(authToken) || err != nil {
+		if !isEqualString(secret, string(authToken)) || err != nil {
 			responder.
 				Create(res).
 				SetStatusWithError(http.StatusUnauthorized, "You are not authorized to use this resource.")
