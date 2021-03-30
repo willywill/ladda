@@ -1,5 +1,5 @@
 # ladda
-A utility written in Go that uploads files to your server
+A utility written in Go that uploads files to your server _with **zero** dependencies_
 
 ![Github Project Status](https://img.shields.io/badge/completion-90%25-yellowgreen)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/willywill/ladda/Test)
