@@ -7,6 +7,6 @@ A utility written in Go that uploads files to your server
 
 **What's left?**
 
-- [ ] Uploader Implemented
-- [ ] Shipper Implemented
+- [x] Uploader Implemented
+- [x] Shipper Implemented
 - [ ] Configuration updates
