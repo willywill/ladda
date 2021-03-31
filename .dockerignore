@@ -1,0 +1,6 @@
+*
+
+!go.mod
+!.env
+!cmd/
+!pkg/

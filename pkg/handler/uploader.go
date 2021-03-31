@@ -45,6 +45,8 @@ func UploadFile(res http.ResponseWriter, req *http.Request) {
 	// Retrieve the file form-data
 	file, handler, fileErr := req.FormFile("file")
 
+	// TODO: Add an option to filer allowable file types?
+
 	if fileErr != nil {
 		log.Println("Error retrieving the file from form-data.")
 		responder.

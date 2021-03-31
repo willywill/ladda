@@ -1,15 +1,16 @@
 # ladda
 A utility written in Go that uploads files to your server _with **zero** dependencies_
 
-![Github Project Status](https://img.shields.io/badge/completion-90%25-yellowgreen)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/willywill/ladda/Test)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/willywill/ladda/test)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/willywill/ladda)
 ![GitHub Repo License](https://img.shields.io/github/license/willywill/ladda)
 
-### Status - In Development
+### Getting Started
 
-**What's left?**
+Ladda runs on in a docker container on your webserver. 
 
-- [x] Uploader Implemented
-- [x] Shipper Implemented
-- [ ] Configuration updates
+[Insert Future Instructions Here]
+
+### Upcoming Improvements
+
+ - Configure allowable file MIME types
