@@ -8,9 +8,13 @@ import (
 )
 
 func GetFilePath(extension string) (path string, pathWithFile string) {
-	writePath, _ := os.LookupEnv("WRITE_PATH")
+	// Write path is a static path that we define to write to the container.
+	// The container user is responsible for binding the volume to the host machine,
+	// to write the file to the desired location
+	writePath := "files"
 	currentDir, _ := os.Getwd()
 
+	// TODO: Use another method for the file name to prevent collisions?
 	urlString := url.GenerateSafeString(12)
 
 	path = fmt.Sprintf("%s/%s", currentDir, writePath)
