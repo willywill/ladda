@@ -5,5 +5,6 @@ WORKDIR /app
 ENV PORT=8080
 RUN go clean --modcache
 # RUN go build -v -o ladda-linux-amd64 ./cmd/main.go
-ENTRYPOINT ["ls"]
+# ENTRYPOINT ["/app/ladda-linux-amd64"]
+ENTRYPOINT ["/bin/sh", "-c" , "ls && /app/ladda-linux-amd64"]
 EXPOSE 8080
