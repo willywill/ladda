@@ -14,3 +14,4 @@ Ladda runs on in a docker container on your webserver.
 ### Upcoming Improvements
 
  - Configure allowable file MIME types
+ - Configure API endpoint
