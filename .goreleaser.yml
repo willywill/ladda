@@ -39,8 +39,6 @@ changelog:
 
 dockers:
   - image_templates:
-      - "ghcr.io/willywill/ladda:{{ .Major }}"
-      - "ghcr.io/willywill/ladda:{{ .Major }}.{{ .Minor }}"
       - "ghcr.io/willywill/ladda:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
       - "ghcr.io/willywill/ladda:latest"
     build_flag_templates:
