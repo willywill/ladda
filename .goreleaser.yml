@@ -43,6 +43,7 @@ dockers:
       - "ghcr.io/willywill/ladda:latest"
     build_flag_templates:
       - "--pull"
+      - "--label=org.opencontainers.image.source=https://github.com/willywill/ladda"
       - "--label=org.opencontainers.image.created={{.Date}}"
       - "--label=org.opencontainers.image.title={{.ProjectName}}"
       - "--label=org.opencontainers.image.revision={{.FullCommit}}"
