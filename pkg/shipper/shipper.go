@@ -19,20 +19,17 @@ func WriteFile(file []byte, extension string) (ok bool, err error) {
 		return false, err
 	}
 
-	err = ioutil.WriteFile(pathWithFile, file, 0755)
+	err = ioutil.WriteFile(pathWithFile, file, 0644)
+
+	if err != nil {
+		return false, err
+	}
 
 	debugString, _ := os.LookupEnv("DEBUG")
 	debug, _ := strconv.ParseBool(debugString)
 
-	if err != nil {
-		if debug {
-			log.Println("Error occurred when writing file", err)
-		}
-		return false, err
-	}
-
 	if debug {
-		log.Printf("File written to: %s", path)
+		log.Printf("File written to: %s", pathWithFile)
 	}
 
 	return true, nil

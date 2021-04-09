@@ -80,7 +80,11 @@ func UploadFile(res http.ResponseWriter, req *http.Request) {
 	ext := filepath.Ext(handler.Filename)
 
 	// Pass along file contents to shipper
-	shipper.WriteFile(fileBytes, ext)
+	_, err := shipper.WriteFile(fileBytes, ext)
+
+	if err != nil && debug {
+		log.Println("Error occurred when writing file", err)
+	}
 
 	responder.
 		Create(res).
