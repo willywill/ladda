@@ -6,4 +6,4 @@
 
 # This is used for running the application in a container on the web server
 docker pull ghcr.io/willywill/ladda:latest &&
-docker run -v "${path:-($PWD)/temp}":/app/files -p "${port:-3001}":3001 --env-file ./.env ghcr.io/willywill/ladda:latest
+docker run -v "${path:-$PWD/temp}"://files -p "${port:-3001}":3001 --env-file ./.env ghcr.io/willywill/ladda:latest
